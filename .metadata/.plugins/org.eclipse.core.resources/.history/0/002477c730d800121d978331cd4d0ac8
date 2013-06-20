@@ -1,0 +1,12 @@
+package com.example.projectone;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class TextPlay extends Activity {
+	public void onCreate(Bundle ins)
+	{
+		super.
+	}
+
+}

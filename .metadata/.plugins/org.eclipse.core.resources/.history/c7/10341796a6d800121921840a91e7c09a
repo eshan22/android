@@ -1,0 +1,16 @@
+package com.example.projectone;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ImageView;
+
+public class camera extends Activity{
+static ImageView iv;
+
+public void onCreate(Bundle bundle)
+{
+	super.onCreate(bundle);
+	setContentView(R.layout.activity_camera);
+	
+}
+}

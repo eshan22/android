@@ -1,0 +1,55 @@
+package com.example.projectone;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+
+public class camera extends Activity implements OnClickListener{
+static ImageView iv;
+static Button b;
+static ImageButton ib;
+static int res;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+	// TODO Auto-generated method stub
+	super.onCreate(savedInstanceState);
+	iv=(ImageView)findViewById(R.id.iv);
+	ib=(ImageButton)findViewById(R.id.ib);
+	b=(Button)findViewById(R.id.b);
+	b.setOnClickListener(this);
+	ib.setOnClickListener(this);
+}
+@Override
+public void onClick(View arg0) {
+	switch(arg0.getId())
+	{
+	case R.id.ib:
+System.out.println("ib pressed");
+		break;
+	case R.id.b:
+	Intent i=new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+	startActivityForResult(i, res);
+		break;
+	}
+}
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	// TODO Auto-generated method stub
+	super.onActivityResult(requestCode, resultCode, data);
+if(resultCode==RESULT_OK)
+{
+	Bundle extra=data.getExtras();
+	Bitmap bmp=(Bitmap)extra.get("data");
+	iv.setImageBitmap(bmp);
+	
+}
+}
+
+}

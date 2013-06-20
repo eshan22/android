@@ -1,0 +1,20 @@
+package com.example.projectone;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class TextPlay extends Activity {
+	public void onCreate(Bundle ins)
+	{
+		super.onCreate(ins);
+		setContentView(R.layout.activity_textplay);
+		Button b=(Button)findViewById(R.id.b);
+		TextView tv=(TextView)findViewById(R.id.tv);
+		EditText ed=(EditText)findViewById(R.id.et);
+	}
+
+}
